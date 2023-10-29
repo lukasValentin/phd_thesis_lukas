@@ -1,0 +1,100 @@
+% this is the main document, which combines the input files of each chapter, which themselves have their individual files (TEX + figures) in the named sub-folders. 
+
+\documentclass[twoside]{report}
+
+\usepackage{configuration}
+
+\begin{document}
+
+% title page, not used in print version
+% \includepdf[pages={1}, scale=1.05]{Kap00_supporting_files/Titelblatt.pdf}
+
+% eth title page with empty pages before and after
+\input{00-aux/titelpage_credits}
+\input{00-aux/eth_titlepage}
+\input{00-aux/blank_page}
+\newpage
+
+% reapply header settings after the clear pagestyle
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LO]{\leftmark}
+\fancyfoot{}
+\fancyfoot[RE, LO]{\thepage} % even pages numbered right, odd numbered left
+
+\pagenumbering{roman}
+
+% \addcontentsline{toc}{chapter}{Contents}
+% how to add PDF-bookmark of the contents?
+\tableofcontents
+\newpage
+
+% for review by doctoral commitee
+%\linenumbers
+
+%\input{Kap00_supporting_files/summary.tex}
+\newpage
+
+%\input{Kap00_supporting_files/zusammenfassung.tex}
+
+% make arabic numbering start correctly on the right hand side
+% \newpage\null\fancyfoot{} % empty page number
+\cleardoublepage
+% \newpage
+\pagenumbering{arabic}
+
+% reactivate fancyfooter after the empty footer of the previous page!
+\fancyfoot{}
+\fancyfoot[RE, LO]{\thepage} % even pages numbered right, odd numbered left
+
+\changelocaltocdepth{1}
+\input{01-Introduction/introduction}
+
+\changelocaltocdepth{0} % only display the chapter level in the table of contents (TOC)
+
+\input{02-EOdal/main}
+\newpage % for fancy formatting
+
+\input{05-Insights/main}
+\newpage
+
+%\input{Kap04_yieldmapping/04_main.tex}
+%\newpage
+
+%\changelocaltocdepth{1} % change back to subsubsection level for TOC
+%\input{Kap05_nmodel/05_main.tex}
+%\newpage
+
+\changelocaltocdepth{2}
+%\input{Kap06_discussion/06_general_discussion.tex}
+
+\changelocaltocdepth{1} % only show chapter and sections for the appendix, no subsections
+
+\newpage
+\phantomsection % force the PDF bookmark to the correct position of the bibliography
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{references}
+
+\newpage
+\input{appendix.tex}
+
+% let the acknowledgements start on a new right hand page
+%\newpage\null\fancyfoot{} % empty page number
+\cleardoublepage
+
+
+\input{00-aux/acknowledgements}
+\newpage
+
+
+\changelocaltocdepth{0}
+%\input{Kap00_supporting_files/cv_gregor_acad.tex}
+
+% Empty last page before the end page
+% not needed for the print version, due to the book envelope 
+% \newpage\null\pagestyle{empty}\newpage
+
+% placeholder for backmatter
+
+\end{document}

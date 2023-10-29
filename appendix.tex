@@ -1,0 +1,17 @@
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+% custom-made header entries for the unnumbered appendix chapter (was a pain...)
+\markboth{APPENDIX}{ }
+\renewcommand{\sectionmark}[1]{ \markright{ \MakeUppercase{#1} } }
+
+% set the figures and tables counter to A.XX for the appendix
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+\setcounter{table}{0}
+
+% ----------------------------------------------------------------------------------------- %
+
+\section*{Appendix - Chapter 2}
+\addcontentsline{toc}{section}{Appendix - Chapter 2}
+\input{05-Insights/appendix}

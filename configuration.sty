@@ -1,0 +1,104 @@
+% ========================== Load packages ==========================
+\usepackage[utf8]{inputenc}
+\usepackage[super]{nth} %% package for easy exponent handling
+\usepackage[english]{babel}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage[version=4]{mhchem} \RequirePackage{amsmath,amssymb,latexsym}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{lineno} %% The lineno packages adds line numbers. Start line numbering with
+% \linenumbers
+\usepackage{setspace} % change linespacing
+\onehalfspacing
+\usepackage{xcolor}  % to allow coloured text passages
+\usepackage{booktabs} % format tables the way I want
+\usepackage{multirow} %% enable combined rows in table cells
+\usepackage{makecell} % make line breaks in table cells
+\usepackage{bookmark}   % make bookmarks in a PDF doc
+\usepackage[super]{nth} %% package for easy exponent handling
+\usepackage{amsmath} %% extended mathematical package
+\usepackage{textcomp} % allows to use diverse mathematical symbols in the text
+\usepackage{graphicx}
+\usepackage{url}    % allow displaying of URLs in the citations
+\usepackage{siunitx} % allow SI units in text
+\usepackage{authblk } % author affiliations
+\usepackage[]{titlesec} % Chapter Title changes
+\usepackage[figuresright]{rotating} % allow rotating figures and tables
+\usepackage{pdflscape} % allows rotation of the landscape pages in a PDF for correct display
+\usepackage{extramarks} % extend fancyhdr package
+\usepackage{tabularx} % better handling of tables
+\usepackage{pdfpages} % integrate PDFs
+\usepackage{caption} % make captions look better
+\usepackage{mathrsfs}
+%\usepackage{chngcntr}
+
+
+% packages for CV
+\usepackage[T1]{fontenc}
+\usepackage{currvita}
+
+% load hyperref package last
+%\usepackage{hyperref}
+
+% ========================== Header & footer ==========================
+% Header settings
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LO]{\leftmark}
+
+% Footer setting
+\fancyfoot{}
+\fancyfoot[RE, LO]{\thepage} % even pages numbered right, odd numbered left
+
+% Redefine chapter title page footer and header settings!
+\fancypagestyle{plain}{
+    \fancyhead{}
+    \fancyfoot[RE, LO]{\thepage}    % same as above
+    \renewcommand{\headrulewidth}{0pt}%
+}
+
+% ========================== Chapter titles ==========================
+% Redefince Chapter titles
+% \titleformat{〈command 〉}[〈shape〉]{〈format〉}{〈label 〉}{〈sep〉}{〈before-code〉}[〈after-code〉]
+
+% Template with block-frame
+% \titleformat{\chapter}[frame]{\large}{\filright\enspace\chaptertitlename\hspace{2pt}\thechapter\enspace}{22pt}{\filcenter\Huge\bfseries}
+
+% very basic template
+%\titleformat{\chapter}[block]{\Huge}{\thechapter.}{1.5ex}{}
+
+% Works well with header & footer style
+\titleformat{\chapter}[display]
+{\Large}
+{\filleft\MakeUppercase{\chaptertitlename} \thechapter}
+{1ex}
+{\titlerule[1.3pt]
+\vspace{2ex}%
+\bfseries\Huge\filright}
+
+
+% ========================== Caption setting ==========================
+\captionsetup{margin=10pt,font=small,labelfont=bf,format=hang}
+
+
+% ========================== Functions ==========================
+% change table of content (TOC) display style within the document
+\newcommand{\changelocaltocdepth}[1]{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
+  \setcounter{tocdepth}{#1}%
+}
+
+% ========================== Custom commands ==========================
+% from Elsevier style sheet
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+
+ 
