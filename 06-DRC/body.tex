@@ -1,0 +1,45 @@
+\section*{Abstract}
+A sound understanding of plant growth is critical to maintaining future crop productivity under ongoing climate change. Remotely sensed time series of crop functional traits from optical satellite imagery are an invaluable tool for deriving appropriate management practices that facilitate risk mitigation and increase the resilience of agroecosystems. However, the availability of imagery is limited by atmospheric disturbances that cause large temporal gaps and noise in the trait time series. 
+Therefore, time series reconstruction methods are required for accurate crop growth modelling. Physiological priors, such as the fact that plant growth is mainly controlled by a few environmental covariates, among which air temperature plays a prominent role, represent a promising approach to improve the representation of crop growth. Here, a novel approach is proposed that combines Sentinel-2 Green Leaf Area Index (GLAI) observations with three dose response curve approaches describing the a priori physiological relationship between growth and temperature in winter wheat. A probabilistic ensemble Kalman filtering data assimilation scheme allows the combination of high temporal resolution air temperature data and satellite imagery, which also allows quantification of uncertainties. 
+The proposed approach requires a smaller number of satellite observations compared to conventional remote sensing time series algorithms, making it suitable for agricultural areas with high cloud cover, and is considerably less complex than a mechanistic crop growth model. Validation was carried out using in-situ data collected on winter wheat plots in Switzerland in two consecutive years. The validation results suggest that the proposed assimilation of Sentinel-2 GLAI and temperature-response-based growth rates allows the reconstruction of physiologically meaningful GLAI time series. In particular, the systematic underestimation of high in-situ GLAI values (> 5 $m^2$ $m^{-2}$) often prevalent in purely remote sensing driven GLAI time series reconstruction was reduced. Thus, the proposed approach is advantageous compared to state-of-the-art remote sensing approach based on wide-spread logistic functions by means of physiological plausibility, fitting requirements and representation of high in-situ GLAI values. This has great potential to increase the reliability of remotely sensed crop productivity assessment.
+
+\section{Introduction}
+\label{sec:introduction}
+\input{06-DRC/Introduction}
+
+\section{Data}
+\label{sec:drc_study-area-data}
+\input{06-DRC/study_area_data}
+
+\section{Methods}
+\label{sec:drc_methods}
+\input{06-DRC/Methods}
+
+\section{Results}
+\label{sec:drc_results}
+\input{06-DRC/Results}
+
+\section{Discussion}
+\label{sec:drc_discussion}
+\input{06-DRC/Discussion}
+
+
+\section{Conclusions}
+\label{sec:drc_conclusions}
+\input{06-DRC/Conclusions}
+
+%% create a non-numbered section for the Acknowledgements
+\section*{Code and Data Availability}
+\label{sec:code-data-availability}
+Code to reproduce the entire workflow including calibration and validation data is available at \url{https://github.com/EOA-team/sentinel2_crop_trait_timeseries} under GNU General Public License v3.0.
+
+\section*{Credit Authorship Contribution Statement}
+Lukas Valentin Graf: Conceptualization, Methodology, Formal analysis, Validation, Visualization, Software, Writing - original draft. Flavian Tschurr: Formal Analysis, Methodology, Software, Methodology, Writing - original draft. Achim Walter: Supervision, Review \& Editing. Helge Aasen:  Supervision, Review \& Editing.
+
+\section*{Declaration of Competing Interest}
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\section*{Acknowledgements}
+LVG acknowledges funding of the Swiss National Science Foundation for the project “PhenomEn” (grant number IZCOZ0\_198091). FT acknowledges funding of the Swiss National Science Foundation for the project "PHENOFLOW" (grant number 200756).
+The authors thank Stefanie Steinhauser and Tobias Hank, both with the Department of Geography, Ludwig-Maximilians-University Munich, for providing the MNI dataset and for fruitful discussion during the early conceptualisation stage of our work. Moreover, the authors thank Vilma Rantanen and Karia Kögler (both with ETH Zurich) for their support in the field as well as the field technicians at Agroscope Reckenholz for their support with in-situ sample processing and storage. Furthermore, we thank Marco Landis (Canton of Zurich) for invaluable support at the Strickhof site. At the Swiss Future Farm we thank the team of Michael Simmler (Agroscope Tänikon) and Florian Abt (Canton of Thurgau) for their support and access to the field sites.

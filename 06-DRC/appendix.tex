@@ -1,0 +1,47 @@
+
+\begin{table}[H]
+\centering
+\caption{Overview of the spectral bands of the multispectral-imager instrument onboard the S2A and S2B satellites provided by the European Space Agency, ESA (\url{https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/msi-instrument}). Band widths and wavelengths are provided in nm, the spatial resolution in m.}
+\label{tab:s2-bands}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+\multicolumn{3}{l}{\textbf{S2A}}                                                                                                                                       & \multicolumn{3}{l}{\textbf{S2B}}                                                                                                                                                                                               \\ \midrule
+\multicolumn{1}{l}{\textbf{Band}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}Central\\ wavelength\end{tabular}}} & \multicolumn{1}{l}{\textbf{Bandwidth}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}Central\\ wavelength\end{tabular}}} & \multicolumn{1}{l}{\textbf{Bandwidth}} & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}Spatial\\ resolution\end{tabular}}} \\
+1                                 & 442.7                                                                                     & 20                                     & 442.3                                                                                     & 20                                     & 60                                                                                        \\
+2                                 & 492.7                                                                                     & 65                                     & 492.3                                                                                     & 65                                     & 10                                                                                        \\
+3                                 & 559.8                                                                                     & 35                                     & 558.9                                                                                     & 35                                     & 10                                                                                        \\
+4                                 & 664.6                                                                                     & 30                                     & 664.9                                                                                     & 31                                     & 10                                                                                        \\
+5                                 & 704.1                                                                                     & 14                                     & 703.8                                                                                     & 15                                     & 20                                                                                        \\
+6                                 & 740.5                                                                                     & 14                                     & 739.1                                                                                     & 13                                     & 20                                                                                        \\
+7                                 & 782.8                                                                                     & 19                                     & 779.7                                                                                     & 19                                     & 20                                                                                        \\
+8                                 & 832.8                                                                                     & 105                                    & 832.9                                                                                     & 104                                    & 10                                                                                        \\
+8a                                & 864.7                                                                                     & 21                                     & 864.0                                                                                     & 21                                     & 20                                                                                        \\
+9                                 & 945.1                                                                                     & 19                                     & 943.2                                                                                     & 20                                     & 60                                                                                        \\
+10                                & 1373.5                                                                                    & 29                                     & 1376.9                                                                                    & 29                                     & 60                                                                                        \\
+11                                & 1613.7                                                                                    & 90                                     & 1610.4                                                                                    & 94                                     & 20                                                                                        \\
+12                                & 2202.4                                                                                    & 174                                    & 2185.7                                                                                    & 184                                    & 20                                                                                        \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+\begin{table}[h]
+\centering
+\caption{Overview of the start parameter, lower and upper boundaries for the parameter estimation. For environment dependent parameters, the corresponding quantiles (Q) have been considered. For the environment independent parameters prior knowledge was used to determine the start values. }
+\label{tab:Sup_starting_paramters}
+
+\begin{tabular}{lllll}
+\toprule
+dose response curve & parameter name & lower  & start  & upper  \\ \hline
+non linear          & T$_{base}$     & Q 0.05 & Q 0.1  & Q 0.6  \\
+non linear          & slope          & 0      & 0.05   & 0.5    \\
+asymptotic          & T$_{base}$     & Q 0.01 & Q 0.1  & Q 0.4  \\
+asymptotic          & lrc            & -15    & -1     & 1.5    \\
+asymptotic          & asymptote      & Q 0.6      & Q 0.9   & Q 0.98   \\
+Wang Engels         & T$_{base}$     & Q 0.1  & Q 0.25 & Q 0.4  \\
+Wang Engels         & T$_{opt}$      & Q 0.6  & Q 0.85 & Q 0.98 \\
+Wang Engels         & T$_{max}$      & Q 0.7  & Q 0.95 & Q 0.99 \\
+\bottomrule
+\end{tabular}
+\end{table}

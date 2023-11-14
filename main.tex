@@ -4,7 +4,49 @@
 
 \usepackage{configuration}
 
+\makeglossaries
+
 \begin{document}
+
+\newacronym{GPP}{GPP}{gross primary productivity}
+\newacronym{LUE}{LUE}{light use efficiency}
+\newacronym{DAS}{DAS}{days after sowing}
+\newacronym{DL}{DL}{double logistic models}
+\newacronym{DRC}{DRC}{dose response curve}
+\newacronym{GLAI}{GLAI}{green leaf area index}
+\newacronym{GDD}{GDD}{growing degree days}
+\newacronym{deltaGLAI}{$\Delta$GLAI}{$\Delta$ green leaf area index}
+\newacronym{RMSE}{RMSE}{root mean squared error}
+\newacronym{S2}{S2}{Sentinel-2}
+\newacronym{RTM}{RTM}{radiative transfer model}
+\newacronym{LUT}{LUT}{lookup-table}
+\newacronym{SCL}{SCL}{scene classification layer}
+\newacronym{MAE}{MAE}{mean absolute error}
+\newacronym{KF}{KF}{Kalman filter}
+\newacronym{EnsKF}{EnsKF}{ensemble Kalman filer}
+\newacronym{nRMSE}{nRMSE}{normalized RMSE}
+\newacronym{MAD}{MAD}{median absolute deviation}
+\newacronym{BBCH}{BBCH}{Biologische Bundesanstalt, Bundessortenamt and CHemical Industry}
+\newacronym{R2}{$R^2$}{Pearson's R-square}
+\newacronym{PAR}{PAR}{photosynthetically active solar radiation}
+\newacronym{GCC}{GCC}{Green canopy cover}
+\newacronym{EO}{EO}{earth observation}
+\newacronym{ARD}{ARD}{Analysis-Ready-Data}
+\newacronym{EOdal}{EOdal}{Earth Observation Data Analysis Library}
+\newacronym{STAC}{STAC}{Spatio-Temporal Asset Catalogs}
+\newacronym{LSP}{LSP}{Land Surface Phenology}
+\newacronym{SOS}{SOS}{start of season}
+\newacronym{EOS}{EOS}{end of season}
+\newacronym{LOS}{LOS}{length of season}
+\newacronym{NDVI}{NDVI}{normalized difference vegetation index}
+\newacronym{MSI}{MSI}{Multispectral Imager}
+\newacronym{EVI}{EVI}{Enhanced Vegetation Index}
+\newacronym{TOA}{TOA}{top-of-atmosphere}
+\newacronym{BRDF}{BRDF}{Bidirectional Reflectance Distribution Function}
+\newacronym{S2-RUT}{S2-RUT}{Sentinel-2 Radiometric Uncertainty Toolbox}
+\newacronym{MC}{MC}{Monte Carlo}
+\newacronym{CCC}{CCC}{Canopy Chlorophyll a+b Content}
+\newacronym{Cab}{Cab}{leaf chlorophyll a+b }
 
 % title page, not used in print version
 % \includepdf[pages={1}, scale=1.05]{Kap00_supporting_files/Titelblatt.pdf}
@@ -56,18 +98,21 @@
 \input{02-EOdal/main}
 \newpage % for fancy formatting
 
+\input{04-Uncertainty/main}
+\newpage
+
 \input{05-Insights/main}
 \newpage
 
-%\input{Kap04_yieldmapping/04_main.tex}
-%\newpage
+\input{06-DRC/main}
+\newpage
 
 %\changelocaltocdepth{1} % change back to subsubsection level for TOC
 %\input{Kap05_nmodel/05_main.tex}
 %\newpage
 
 \changelocaltocdepth{2}
-%\input{Kap06_discussion/06_general_discussion.tex}
+\input{07-Discussion/discussion}
 
 \changelocaltocdepth{1} % only show chapter and sections for the appendix, no subsections
 
@@ -78,6 +123,9 @@
 
 \newpage
 \input{appendix.tex}
+\pagebreak
+
+\printglossary[type=\acronymtype]
 
 % let the acknowledgements start on a new right hand page
 %\newpage\null\fancyfoot{} % empty page number
