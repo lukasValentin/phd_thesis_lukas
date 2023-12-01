@@ -1,7 +1,23 @@
 \chapter{General discussion}
 \label{chap:general-discussion}
 
+The aim of this chapter is to bring together the different aspects of the research carried out (Chapters \ref{chap:eodal}-\ref{chap:drc}) within the framework of a landscape-scale prototype and to discuss its applications, limitations and possible further research questions. However, the scientific discussion of the individual research chapters is not repeated here. Please refer to the relevant discussion subsections in the previous chapters.
+
 \section{A prototype for landscape-scale phenotyping}
+Figure \ref{fig:oa-disc-prototype} shows a sketch of how the individual research components can be transferred to a landscape level prototype to quantify winter wheat growth and development at the landscape level.
+
+The main data sources for the prototype are environmental covariates, mainly air temperature, and high resolution optical satellite imagery from the \gls{S2} mission. The necessary calibration of the prototype is mainly based on field phenotyping data, which encode the relationships between development and growth (see chapter \ref{chap:insights}) and establish the relationship between plant growth and environmental conditions (chapter \ref{chap:drc}). These calibration data thus represent the physiological and phenological knowledge of G $\times$ E interactions in crops in general and wheat in particular.
+
+Using the calibration and the two data sources, the functionality of the prototype can now be demonstrated in three steps.
+
+\paragraph{Step 1 -- Timing and duration of key phenological stages}
+The first step is to determine the timing of key phenological development stages as described in Chapters \ref{chap:phemology} and \ref{chap:insights}. This is important to determine the onset and duration of the \gls{SE} period, which is the focus of attention due to its importance in grain yield formation, as explained in Chapter \ref{chap:introduction}. The phenology model uses only weather data and has a relatively coarse spatial resolution (km scale) due to the relatively coarse resolution of most meteorological data products at the landscape scale. The timing extracted from the phenology model will therefore limit the period over which satellite data should be considered.
+
+\paragraph{Step 2 -- Trait retrieval from satellite imagery}
+Once the relevant time period has been extracted, satellite data are searched and converted to \gls{GLAI} using physiological and phenological priors from field phenotyping as described in Chapter \ref{chap:insights} using RTM inversion and the software \gls{EOdal} (Chapter \ref{chap:eodal}). Thus, at $n$ time points, where $n$ is the number of \gls{S2} scenes, \gls{GLAI} estimates are available that contain spatial detail at 10 $\times$ 10 m spatial resolution. This allows spatial detail to be resolved, e.g. on within-field heterogeneity. The \gls{GLAI} estimates based on the \gls{S2} data are thus snapshots of the apparent growth conditions.
+
+\paragraph{Step 3 -- Reconstruction of growth}
+Using the \gls{S2} \gls{GLAI} observations and the air temperature data, the growth dynamics in the \gls{SE} period can be modelled in hourly or daily resolution in a final step, as described in Chapter \ref{chap:drc} using \gls{DRC}s. In this way, the high temporal resolution of the temperature data is combined with the spatial detail of the \gls{S2} \gls{GLAI} observations. Here, not only the physiological knowledge from the field phenotyping is encoded, but also the uncertainty propagation carried out in Chapter \ref{chap:uncertainty} is used to model growth and development during the \gls{SE} period.
 
 \begin{figure}[H]
     \centering
@@ -10,18 +26,27 @@
     \label{fig:oa-disc-prototype}
 \end{figure}
 
-\section{Open questions}
-% open question future academic work could address
-% what is more important: spatial or temporal resolution? -> S2-L8 example -> what is the "right" resolution
-% which parts of the growth period are the most crucial, e.g., for data assimilation -> I argue that we should do it like the breeders and pay most attention to the critical transitions
+The prototype composed of these components thus allows the quantification of winter wheat growth and development at the landscape scale, for example in the Swiss Plateau, with a spatial resolution of up to 10 m and a temporal resolution of up to one hour. Furthermore, by combining satellite, meteorological and in-situ data, the prototype can be considered as a true \gls{EO} system. At the same time, the quantification of growth through \gls{GLAI} values and development through phenological stages means that the prototype is also a phenotyping system.
 
-\section{Current limitations and ways forward}
-% mainly limitations for an operational usage of the proposed system but also scientifically relevant at larger spatial scales
-\subsection{Data}
-% lack of in-season crop and cultivar information
-% poor management information (sowing dates)
-% lack of in-situ cal/ val data
-\subsection{Methods}
-% more explicit linkage to agronomically relevant traits such as yield or nitrogen-/ water-use efficiency for policy making & enforcement
-% more complex DRC like Wang Engels and phenology model also for stem elongation -> flavian
-% extend to other crops -> flavian
+\section{Answers to research questions}
+The proposed prototype (Figure \ref{fig:oa-disc-prototype}) can be used to address the three research questions outlined in section \ref{sec:intro-obj-rj}.
+
+\subsection{How can field phenotyping and spaceborne remote sensing data be combined to allow up-scaling of physiological knowledge from field phenotyping to the landscape-scale?}
+This thesis has identified two ways of combining field phenotyping and spaceborne remote sensing data. The first way is to use field phenotyping data as prior knowledge to constrain \gls{RTM} simulations as shown in chapter \ref{chap:insights}, and to fill temporal gaps and remove outliers using \gls{DRC}s to reconstruct hourly or daily \gls{GLAI} trajectories from single \gls{S2} observations (chapter \ref{chap:drc}). While the first way directly addresses the workflow of remote sensing retrieval and time series reconstruction, the second way is about using field phenotyping data to parameterise phenological models (Chapter \ref{chap:phemology}), which in turn are used to select relevant satellite imagery and quantify the timing of key developmental stages such as the end of heading. It is thus a more indirect way of incorporating field phenotyping data into such a \gls{EO} approach. As a result, both pathways allow knowledge and concepts to be scaled up from field phenotyping to the landscape scale.
+
+\subsection{Can a landscape-scale phenotyping approach provide accurate, physiologically based and traceable insights into winter wheat growth and development?}
+The quantification of uncertainties (see Chapter \ref{chap:uncertainty}) fulfils the requirement for traceability (Section \ref{sec:intro-obj-rj}). The integration of prior knowledge from field phenotyping into the \gls{GLAI} retrieval process in step 2, as well as into the parameterisation of \gls{DRC}s in step 3, fulfils the requirement for physiological plausibility (see also the individual scientific discussions in Sections \ref{sec:insights_discussion} and \ref{sec:drc_discussion}). The accuracy of the methodology has been demonstrated using multi-year, independent in-situ data for phenological development (RMSE for heading date: 2 days, chapter \ref{chap:phemology}) and GLAI (smallest relative error: 13\%, chapter \ref{chap:drc}). This research question can therefore be answered in the affirmative.
+
+\subsection{What are the potentials but also the limitations and challenges of such a landscape phenotyping approach?}
+
+\subsubsection{Potentials}
+% advancement of EO-based systems
+% study G $\times$ E at larger spatial scales
+% relevance for agronomic decision making
+
+\subsubsection{Limitations and challenges}
+% lack of further calibration data
+% lack of management data -> varieties (paper dario with share of varieties); sowing date lacking
+
+
+\section{Directions of future research}
