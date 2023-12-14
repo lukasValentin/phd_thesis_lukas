@@ -31,11 +31,7 @@ The processing layer (Figure \ref{fig:overview}, lower right) provides functiona
 \subsection{Analysis Layer}
 The analysis layer (Figure \ref{fig:overview}, bottom) is used for the analysis of data from \gls{EO} satellites and environmental covariates such as meteorological, terrain, soil and land use data. It builds upon the core layer to query and access different data sources and the processing layer to prepare the data analysis-ready. The underlying complex data management such as the merging of data from satellite tiles and filling of no-data values is hidden from the user in the processing layer (see Section \ref{subsec:processing-layer}).
 
-\gls{EOdal} provides interfaces to widely-used open-source Python libraries (e.g., geopandas, numpy, xarray). This allows users to integrate their own \gls{EO} processing workflows and modules (c.f. section \ref{subsec:supplementary-modules}) to e.g. estimate biochemical, structural or integrated traits such as chlorophyll, leaf area index, yield or land surface phenology (Figure \ref{fig:overview}, lower left). 
-
-\subsection{Applications of EOdal}
-\label{subsec:supplementary-modules}
-\gls{EOdal} has already been used for studies in agroecological research. \citet{perich_pixel-based_2023} used \gls{EOdal} for pixel-based prediction of crop yield using S2 time series.  In \citet{graf_propagating_2022}, \gls{EOdal} is used to propagate radiometric uncertainty from \gls{S2} reflectance factors to phenological metrics. Moreover, \gls{EOdal} drives the \gls{EO} platform at the Swiss Federal Center of Excellence for Agricultural Research, Agroscope, underpinning its relevance within an operational and governmental environment\footnote{\url{http://www.eoa-team.net/}}.
+\gls{EOdal} provides interfaces to widely-used open-source Python libraries (e.g., geopandas, numpy, xarray). This allows users to integrate their own \gls{EO} processing workflows and modules (c.f. section \ref{subsec:supplementary-modules}) to e.g. estimate biochemical, structural or integrated traits such as chlorophyll, leaf area index, yield or land surface phenology (Figure \ref{fig:overview}, lower left).
 
 \begin{figure}[H]
     \centering
@@ -43,6 +39,10 @@ The analysis layer (Figure \ref{fig:overview}, bottom) is used for the analysis 
     \caption{Overview of EOdal and its three layers: The core layer (top) handles different input data sources in a standardized way. The analysis layer (bottom left) builds upon the core and the processing layer (bottom right) for data maintenance, querying, intersection and integration into user-defined data science pipelines.}
     \label{fig:overview}
 \end{figure}
+
+\subsection{Applications of EOdal}
+\label{subsec:supplementary-modules}
+\gls{EOdal} has already been used for studies in agroecological research. \citet{perich_pixel-based_2023} used \gls{EOdal} for pixel-based prediction of crop yield using S2 time series.  In \citet{graf_propagating_2022}, \gls{EOdal} is used to propagate radiometric uncertainty from \gls{S2} reflectance factors to phenological metrics. Moreover, \gls{EOdal} drives the \gls{EO} platform at the Swiss Federal Center of Excellence for Agricultural Research, Agroscope, underpinning its relevance within an operational and governmental environment\footnote{\url{http://www.eoa-team.net/}}.
 
 \section{Usage Example: Interpreting In-Field Growth Heterogeneity Through Time with Topographic and Meteorological Data}
 \label{sec:reprod_example}

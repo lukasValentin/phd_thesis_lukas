@@ -89,10 +89,10 @@ For the period 1972 to 1995, evaluations of the heading date of winter wheat wer
 In-situ heading date ratings were conducted by experts using visual scoring of the inflorescence. Heading was reached when half of the inflorescence emerged from the flag leaf sheath \citep{meier_growth_2018}. This rating scheme was used for both, calibration (Section \ref{subsubsec:hd-cal-data}) and validation data (Section \ref{subsubsec:hd-val-data}) except the MeteoSwiss dataset with historical ratings for which the methodology was not reported.
 
 \subsection{Simulation of phenological development}
-To simulate phenological development, the phenology module of the mechanistic crop model WOrld FOod STudies (WOFOST) -- hereafter referred to as the WOFOST phenology model -- developed to simulate the growth and development cycle of cereal crops \citep{diepen_wofost_1989} was used. WOFOST-phenology has been shown to accurately predict the phenology of winter wheat in Europe \citep{ceglar_improving_2019} and therefore seems suitable for our study.
+To simulate phenological development, the phenology module of the mechanistic crop model WOrld FOod STudies (WOFOST) -- hereafter referred to as the \gls{WOFOST} phenology model -- developed to simulate the growth and development cycle of cereal crops \citep{diepen_wofost_1989} was used. WOFOST-phenology has been shown to accurately predict the phenology of winter wheat in Europe \citep{ceglar_improving_2019} and therefore seems suitable for our study.
 All simulations were performed using the Python Crop Simulation Environment\footnote{\url{https://github.com/ajwdewit/pcse}} (version 5.5.4) in Python 3.11.5.
 
-The WOFOST phenology model accumulates daily mean air temperature sums for each $i$th day after sowing between a base temperature $T_{base}$, below which no development is assumed, and a maximum effective temperature $T_{max, e}$, above which the development rate is set to a constant value. For winter wheat, $T_{base}$ is usually set to 0 deg C \citep{porter_temperatures_1999}. $T_{max,e}$ has been set to 30 degrees C as suggested by \cite{ceglar_improving_2019}. To reach anthesis, the WOFOST phenology model constrains the accumulation of temperature sums by vernalisation and photoperiod.
+The \gls{WOFOST} phenology model accumulates daily mean air temperature sums for each $i$th day after sowing between a base temperature $T_{base}$, below which no development is assumed, and a maximum effective temperature $T_{max, e}$, above which the development rate is set to a constant value. For winter wheat, $T_{base}$ is usually set to 0 deg C \citep{porter_temperatures_1999}. $T_{max,e}$ has been set to 30 degrees C as suggested by \cite{ceglar_improving_2019}. To reach anthesis, the \gls{WOFOST} phenology model constrains the accumulation of temperature sums by vernalisation and photoperiod.
 
 \begin{equation}
 \label{eq:dvs}
@@ -125,9 +125,9 @@ CH-Claro & 795   \\ \bottomrule
 \end{table}
 
 \subsection{Model Validation}
-The optimised WOFOST phenology model was evaluated per winter wheat cultivar by comparing observed and simulated heading dates - expressed as \gls{DOY} - in terms of \gls{RMSE} (equation \ref{eq:rmse}), Pearson's $R$ and Spearman's rank correlation coefficient (Spearman's $rho$). We chose to use both correlation measures to quantify not only linear relationships between observed and simulated heading data (Pearson's $R$), but also monotonic relationships.
+The optimised \gls{WOFOST} phenology model was evaluated per winter wheat cultivar by comparing observed and simulated heading dates - expressed as \gls{DOY} - in terms of \gls{RMSE} (equation \ref{eq:rmse}), Pearson's $R$ and Spearman's rank correlation coefficient (Spearman's $rho$). We chose to use both correlation measures to quantify not only linear relationships between observed and simulated heading data (Pearson's $R$), but also monotonic relationships.
 
-Validation was performed using the independent validation data (see section \ref{subsubsec:hd-val-data}), which were not used to optimise the $T_{sum1}$ parameter. For the field phenotyping data with known sowing dates and variety information, the WOFOST phenology output could be used directly. In the case of the historical ratings provided by MeteoSwiss, we averaged the results of the two varieties and the two sowing date configurations (see next section, \ref{subsubsec:sowing-date-estimation}) into a single value, as the actual variety and sowing date were unknown.
+Validation was performed using the independent validation data (see section \ref{subsubsec:hd-val-data}), which were not used to optimise the $T_{sum1}$ parameter. For the field phenotyping data with known sowing dates and variety information, the \gls{WOFOST} phenology output could be used directly. In the case of the historical ratings provided by MeteoSwiss, we averaged the results of the two varieties and the two sowing date configurations (see next section, \ref{subsubsec:sowing-date-estimation}) into a single value, as the actual variety and sowing date were unknown.
 
 \subsection{Model inference at the landscape scale}
 
@@ -138,7 +138,7 @@ At the landscape scale, the exact sowing date is usually unknown. To overcome th
 We therefore decided to use the first and last suitable potential sowing dates identified by the algorithm for our simulations. We assume that this captures all the temporal variability of sowing dates within a spatial unit.
 
 \subsubsection{Model setup}
-We used the 1 by 1 km grid cells (N = 5230, see section \ref{subsec:meteo}) constrained by the cropped area (see figure \ref{fig:map-spatial-units}a) to run the WOFOST phenology simulations for the crop years 1972 to 2020. For each of the 5230 spatial units, simulations were run separately per winter wheat variety (N = 2), sowing date type (N = 2) and growing season (N = 49), resulting in a total of 1'025'080 WOFOST phenology runs.
+We used the 1 by 1 km grid cells (N = 5230, see section \ref{subsec:meteo}) constrained by the cropped area (see figure \ref{fig:map-spatial-units}a) to run the \gls{WOFOST} phenology simulations for the crop years 1972 to 2020. For each of the 5230 spatial units, simulations were run separately per winter wheat variety (N = 2), sowing date type (N = 2) and growing season (N = 49), resulting in a total of 1'025'080 \gls{WOFOST} phenology runs.
 
 \subsubsection{Landscape-scale analysis}
 
@@ -162,7 +162,7 @@ CH-Claro reached the heading stage slightly earlier than Arina in both the obser
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{03-Heading-Dates/img/scatter_plot_validation_phenotyping.png}
+    \includegraphics[scale=0.7]{03-Heading-Dates/img/scatter_plot_validation_phenotyping.png}
     \caption{Scatter plot of observed and simulated heading dates for Arina (a) and CH-Claro using the independent validation data set at the FIP and Delley site color-coded by harvest year (N = 24).}
     \label{fig:val-scatter}
 \end{figure}
@@ -170,11 +170,11 @@ CH-Claro reached the heading stage slightly earlier than Arina in both the obser
 \subsubsection{MeteoSwiss historical dataset}
 \label{subsubsec:meteoswiss-data}
 
-The scatter plot showing the validation results from the MeteoSwiss historical dataset is shown in Figure \ref{fig:val-scatter-meteoswiss}. The offset from the desired 1:1 line (dashed line in Figure \ref{fig:val-scatter-meteoswiss}) was greater than for the field phenotyping data (section \ref{subsubsec:res-phenotyping}), resulting in a \gls{RMSE} of 10.9 days. Both Pearson's $R$ and Spearman's $rho$ were around 0.5 at the 0.001 significance level.
+The scatter plot with the validation results from the MeteoSwiss historical dataset is shown in Figure \ref{fig:val-scatter-meteoswiss}. The offset from the desired 1:1 line (dashed line in Figure \ref{fig:val-scatter-meteoswiss}) was greater than for the field phenotyping data (section \ref{subsubsec:res-phenotyping}), resulting in a \gls{RMSE} of 10.9 days. Both Pearson's $R$ and Spearman's $rho$ were around 0.5 at the 0.001 significance level.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{03-Heading-Dates/img/scatter_plot_validation_meteoswiss.png}
+    \includegraphics[scale=0.5]{03-Heading-Dates/img/scatter_plot_validation_meteoswiss.png}
     \caption{Scatter plot of observed and simulated heading dates using the MeteoSwiss historical validation data set for the years 1972 to 1995 (N = 415).}
     \label{fig:val-scatter-meteoswiss}
 \end{figure}
@@ -239,7 +239,7 @@ Figure \ref{fig:map-temporal-trend}c-d shows the correlation between trend and m
 \label{sec:hd-discussion}
 \subsection{Interpretation of results}
 \subsubsection{Model performance}
-The WOFOST phenology model allowed an unbiased variety-specific prediction of heading date over several years at the phenotyping sites, as indicated by high values of Spearman's $rho$ and Pearson's $R$ (section \ref{subsubsec:res-phenotyping}). The model showed consistent differences in the timing of heading between Arina and CH-Claro, reflecting the expected differences between these two varieties known from in-situ observations. In addition, the inter-annual variability was reflected with good agreement with in-situ observations, as indicated by high values of the rank correlation coefficient (Figure \ref{fig:val-scatter}). The obtained \gls{RMSE} (2 days) was in good agreement with values reported in the literature: \cite{liu_uncertainty_2018}, for example, reported a \gls{RMSE} of 3 to 4 days for variety-specific prediction of wheat heading dates in China. \cite{rogger_can_2021}, who used the same data set for calibration as in this study (section \ref{subsubsec:hd-cal-data}) but focused on different varieties, reported \gls{RMSE} values of 3.6 days.
+The \gls{WOFOST} phenology model allowed an unbiased variety-specific prediction of heading date over several years at the phenotyping sites, as indicated by high values of Spearman's $rho$ and Pearson's $R$ (section \ref{subsubsec:res-phenotyping}). The model showed consistent differences in the timing of heading between Arina and CH-Claro, reflecting the expected differences between these two varieties known from in-situ observations. In addition, the inter-annual variability was reflected with good agreement with in-situ observations, as indicated by high values of the rank correlation coefficient (Figure \ref{fig:val-scatter}). The obtained \gls{RMSE} (2 days) was in good agreement with values reported in the literature: \cite{liu_uncertainty_2018}, for example, reported a \gls{RMSE} of 3 to 4 days for variety-specific prediction of wheat heading dates in China. \cite{rogger_can_2021}, who used the same data set for calibration as in this study (section \ref{subsubsec:hd-cal-data}) but focused on different varieties, reported \gls{RMSE} values of 3.6 days.
 
 The results of the comparison with the historical MeteoSwiss data showed a reduced accuracy (see section \ref{subsubsec:meteoswiss-data}) with slightly higher errors of 11 days (see Figure \ref{fig:val-scatter-meteoswiss}). There are two main reasons for this: First, the data do not contain quality information. Thus, it is unclear whether all ratings were made according to the proposed methodology (see section \ref{subsec:rating-method}), which could be a potential source of discrepancy between observed and simulated heading dates. Secondly, as neither the sowing date nor the variety was known, the uncertainty arising from these unknowns limits the achievable error. As we have shown, both variety and sowing date have a small effect on the simulated heading date. Thus, part of the error in validating the historical ratings could be explained by the lack of management information mentioned above. It is also conceivable that small-scale microclimatic effects play a role. Indeed, we were able to show with the field phenotyping data that high accuracy is possible with the 1 on 1 $km^2$ grid cells. However, this is only a study using two grid cells (FIP and Delley) and is not necessarily representative of other locations. Overall, all three effects mentioned above are likely to contribute to the reduced accuracy of the validation of the Meteoswiss data.
 
@@ -264,7 +264,7 @@ In addition to these points, further research could investigate the spatio-tempo
 Variety-specific simulations of heading dates in two Swiss winter wheat varieties revealed past landscape-scale spatial variability and temporal trends. The observed high degree of spatio-temporal variability in heterogeneous landscapes highlights the contribution of phenology models to the assessment of climate change impacts and the comparison of crop growing conditions between years and sites. While the lack of accurate sowing date information had little effect on simulated heading dates due to vernalisation and photoperiodism requirements, recent changes in wheat variety selection and management practices may require further calibration and adaptation of the approach. Nevertheless, the approach presented provides a tool for assessing the impacts of climate change on crop production, which is relevant to agricultural practitioners and decision makers.
 
 \section*{Code and Data Availability}
-Code to re-run the WOFOST simulations is available at \url{https://github.com/EOA-team/winter_wheat_phenology.git} under MIT license. Pre-computed heading date predictions are available from \url{http://hdl.handle.net/20.500.11850/637092} under Creative Commons Attribution 4.0 International license.
+Code to re-run the \gls{WOFOST} simulations is available at \url{https://github.com/EOA-team/winter_wheat_phenology.git} under MIT license. Pre-computed heading date predictions are available from \url{http://hdl.handle.net/20.500.11850/637092} under Creative Commons Attribution 4.0 International license.
 
 \section*{Credit Authorship Contribution Statement}
 Lukas Valentin Graf: Conceptualization, Methodology, Formal analysis, Validation, Visualization, Software, Writing - original draft. Raphael Portmann: Methodology, Software, Review \& Editing. Achim Walter: Supervision, Review \& Editing. Helge Aasen:  Supervision, Review \& Editing.
