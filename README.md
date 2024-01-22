@@ -1,0 +1,1 @@
+This repository contains the raw Latex files and figures used to write up the PhD thesis of Lukas Valentin Graf with the title "Prototyping of a landscape-scale phenotyping approach for quantification of winter wheat growth and development".
